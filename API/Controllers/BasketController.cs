@@ -47,7 +47,7 @@ namespace API.Controllers
 
             if (product == null)
             {
-                return NotFound();
+                return BadRequest(new ProblemDetails { Title = "Product not found" });
             }
 
             basket.AddItem(product, quantity);
